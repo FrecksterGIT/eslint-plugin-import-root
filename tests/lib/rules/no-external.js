@@ -26,13 +26,22 @@ RuleTester.setDefaultConfig({
 var ruleTester = new RuleTester();
 ruleTester.run("no-external", rule, {
 
-  valid: [{
-    code: "import './';"
-  }],
+  valid: [
+    {
+      code: "import './';"
+    }
+  ],
 
   invalid: [
     {
       code: "import '../';",
+      errors: [{
+        message: "Import outside of project scope.",
+        type: "Literal"
+      }]
+    },
+    {
+      code: "import '/';",
       errors: [{
         message: "Import outside of project scope.",
         type: "Literal"

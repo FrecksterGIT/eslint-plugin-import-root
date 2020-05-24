@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-import-root",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Checks all imports are inside the project scope.",
   "keywords": [
     "eslint",
@@ -10,7 +10,12 @@
   "author": "Sven Müller <sven.mueller@breathless-code.de>",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "mocha tests --recursive",
+    "release": "standard-version"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freckstergit/eslint-plugin-import-root.git"
   },
   "dependencies": {
     "pkg-dir": "^4.2.0",
@@ -19,7 +24,8 @@
   "devDependencies": {
     "@types/node": "^14.0.5",
     "eslint": "~7.1.0",
-    "mocha": "^7.2.0"
+    "mocha": "^7.2.0",
+    "standard-version": "^8.0.0"
   },
   "peerDependencies": {
     "eslint": "~7.1.0"
