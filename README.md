@@ -36,16 +36,13 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "import-root/rule-name": 2
+        "import-root/no-external": "error",
+        "import-root/no-absolute": "error"
     }
 }
 ```
 
 ## Supported Rules
 
-* Fill in provided rules here
-
-
-
-
-
+* **import-root/no-external** Disallow relative paths leading outside of the directory containing the package.json file.
+* **import-root/no-absolute** Disallow all absolute imports (starting with a /).
