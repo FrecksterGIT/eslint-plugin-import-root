@@ -10,13 +10,13 @@
 
 var rule = require("../../../lib/rules/no-absolute"),
 
-    RuleTester = require("eslint").RuleTester;
+  RuleTester = require("eslint").RuleTester;
 
 RuleTester.setDefaultConfig({
-    parserOptions: {
-        ecmaVersion: 6,
-        sourceType: "module"
-    }
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module"
+  }
 });
 
 //------------------------------------------------------------------------------
@@ -26,22 +26,24 @@ RuleTester.setDefaultConfig({
 var ruleTester = new RuleTester();
 ruleTester.run("no-absolute", rule, {
 
-    valid: [
-        {
-            code: 'import "test";'
-        },
-        {
-            code: 'import "./test"'
-        }
-    ],
+  valid: [
+    {
+      code: 'import "test";'
+    },
+    {
+      code: 'import "./test"'
+    }
+  ],
 
-    invalid: [
+  invalid: [
+    {
+      code: "import '/';",
+      errors: [
         {
-            code: "import '/';",
-            errors: [{
-                message: "Absolute import path not allowed.",
-                type: "Literal"
-            }]
+          message: "Absolute import path not allowed.",
+          type: "Literal"
         }
-    ]
+      ]
+    }
+  ]
 });
