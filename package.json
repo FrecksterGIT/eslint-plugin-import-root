@@ -18,7 +18,7 @@
     "url": "git+https://github.com/freckstergit/eslint-plugin-import-root.git"
   },
   "dependencies": {
-    "pkg-dir": "^4.2.0",
+    "pkg-dir": "^5.0.0",
     "requireindex": "~1.2.0"
   },
   "devDependencies": {
